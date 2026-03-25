@@ -3,6 +3,14 @@ AML transaction monitoring project using Python, SQL, and Tableau
 
 # Anti-Money Laundering (AML) Transaction Monitoring Project
 
+## 📌 Project Summary
+
+This project focuses on building an Anti-Money Laundering (AML) transaction monitoring system using Python and SQL. The goal is to identify suspicious financial activities by analyzing transaction patterns such as high-value transfers, structuring behavior, and high-frequency accounts.
+
+Using a combination of exploratory data analysis in Python and advanced querying in Google BigQuery, the project applies rule-based logic to classify transactions into risk categories (Low, Medium, High). Key AML indicators such as transaction amount thresholds, transaction types, and account-level behaviors were used to detect potential fraud patterns.
+
+The project demonstrates end-to-end data analysis skills, including data cleaning, aggregation, risk flagging, and interpretation of financial transaction data to support fraud detection use cases.
+
 ## 📌 Project Overview
 This project analyzes financial transaction data to identify potential money laundering activities using Python and SQL. The goal is to detect suspicious patterns such as high-value transactions, structuring behavior, and high-frequency accounts, which are common indicators in AML investigations.
 
