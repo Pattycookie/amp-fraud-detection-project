@@ -1,4 +1,4 @@
-# amp-fraud-detection-project
+# aml-fraud-detection-project
 AML transaction monitoring project using Python, SQL, and Tableau
 
 # Anti-Money Laundering (AML) Transaction Monitoring Project
