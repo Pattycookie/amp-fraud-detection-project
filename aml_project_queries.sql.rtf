@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- =========================================\
+-- AML PROJECT: TRANSACTION ANALYSIS\
+-- =========================================\
+\
+\
+-- 1. Fraud vs Non-Fraud Transaction Distribution\
+SELECT \
+  isFraud,\
+  COUNT(*) AS txn_count\
+FROM `aml-project-491302.AML_Transactions.transactions`\
+GROUP BY isFraud\
+ORDER BY isFraud;\
+\
+\
+-- =========================================\
+-- 2. High-Value Transactions\
+-- =========================================\
+SELECT *\
+FROM `aml-project-491302.AML_Transactions.transactions`\
+WHERE amount > 10000\
+ORDER BY amount DESC\
+LIMIT 10;\
+\
+\
+-- =========================================\
+-- 3. Structuring Analysis\
+-- =========================================\
+SELECT \
+  nameOrig,\
+  COUNT(*) AS txn_count\
+FROM `aml-project-491302.AML_Transactions.transactions`\
+WHERE amount BETWEEN 9000 AND 10000\
+GROUP BY nameOrig\
+HAVING COUNT(*) > 1\
+ORDER BY txn_count DESC\
+LIMIT 10;\
+\
+\
+-- =========================================\
+-- 4. High-Frequency Accounts\
+-- =========================================\
+SELECT \
+  nameOrig,\
+  COUNT(*) AS txn_count\
+FROM `aml-project-491302.AML_Transactions.transactions`\
+GROUP BY nameOrig\
+ORDER BY txn_count DESC\
+LIMIT 10;\
+\
+\
+-- =========================================\
+-- 5. Transaction Type Distribution\
+-- =========================================\
+SELECT \
+  type,\
+  COUNT(*) AS txn_count\
+FROM `aml-project-491302.AML_Transactions.transactions`\
+GROUP BY type\
+ORDER BY txn_count DESC;\
+\
+\
+-- =========================================\
+-- 6. High-Risk Transactions (Combined Rules)\
+-- =========================================\
+SELECT *\
+FROM `aml-project-491302.AML_Transactions.transactions`\
+WHERE amount > 10000\
+  AND type IN ('TRANSFER', 'CASH_OUT')\
+LIMIT 10;}
