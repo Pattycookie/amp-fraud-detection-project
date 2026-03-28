@@ -28,7 +28,6 @@ This project analyzes financial transaction data to identify potential money lau
 ## 🛠 Tools & Technologies
 - Python (Pandas, Matplotlib)
 - SQL (Google BigQuery)
-- Tableau (planned for dashboard visualization)
 - Jupyter Notebook
 
 ---
